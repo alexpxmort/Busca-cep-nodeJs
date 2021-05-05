@@ -6,9 +6,9 @@ use teste_cep;
 CREATE TABLE `enderecos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cep` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-   `logradouro` varchar(255) COLLATE utf8_unicode_ci  NOT NULL,
+   `logradouro` varchar(255) COLLATE utf8_unicode_ci  DEFAULT NULL,
     `complemento` varchar(255) COLLATE utf8_unicode_ci  DEFAULT NULL,
-    `bairro` varchar(255) COLLATE utf8_unicode_ci  NOT NULL,
+    `bairro` varchar(255) COLLATE utf8_unicode_ci  DEFAULT NULL,
      `localidade` varchar(255) COLLATE utf8_unicode_ci  NOT NULL,
      `uf` varchar(255) COLLATE utf8_unicode_ci  DEFAULT NULL,
      `ibge` varchar(255) COLLATE utf8_unicode_ci  DEFAULT NULL,
