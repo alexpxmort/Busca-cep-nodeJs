@@ -1,0 +1,1 @@
+{"version":3,"file":"dbsConf.js","sourceRoot":"","sources":["../../../src/config/dbsConf.ts"],"names":[],"mappings":";;;AAOC,MAAM,cAAc,GAAG,GAAG,EAAE;IACzB,OAAO;QACL,aAAa,EAAE,WAAW;QAC1B,aAAa,EAAE,IAAI;QACnB,aAAa,EAAE,MAAM;QACrB,iBAAiB,EAAE,WAAW;QAC9B,eAAe,EAAE,WAAW;QAC5B,gBAAgB,EAAE,QAAQ;KAC3B,CAAC;AACN,CAAC,CAAC;AACW,QAAA,YAAY,GAAG,cAAc,EAAE,CAAA"}
