@@ -4,6 +4,11 @@
 
 import {app} from './app'
 const connection = require('./database/index'); 
+
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
  
   let PORT = process.env.PORT || 4500;
  app.listen(PORT,()=>{

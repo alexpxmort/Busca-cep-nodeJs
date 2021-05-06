@@ -4,6 +4,11 @@
 *
  */
 
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
+
 const Redis  = require('ioredis');
 
 class cache{

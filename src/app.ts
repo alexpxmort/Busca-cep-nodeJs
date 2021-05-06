@@ -6,8 +6,7 @@
 import cors from 'cors'
 import {ROUTES} from '../src/routes/routesIndex'
  import bodyParser from 'body-parser';
- 
- 
+
   class App {
     public app;
      constructor(){
