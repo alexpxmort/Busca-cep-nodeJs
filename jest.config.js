@@ -1,3 +1,9 @@
+/**
+ * Arquivo de configuração do Jest
+ */
+
+
+
 const {resolve} = require('path')
 
 const root = resolve(__dirname);

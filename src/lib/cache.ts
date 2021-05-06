@@ -1,3 +1,9 @@
+
+/**
+*Arquivo de configuração do cache do Redis
+*
+ */
+
 const Redis  = require('ioredis');
 
 class cache{

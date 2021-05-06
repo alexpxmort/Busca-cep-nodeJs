@@ -1,4 +1,9 @@
 
+/**
+ * Arquivos onde são realizados os testes da aplicação
+ */
+
+
 const supertest = require('supertest');
 
 import {app} from '../../src/app'
