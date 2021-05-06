@@ -58,7 +58,7 @@ class EnderecoController {
                         _endereco = enderecoCreated;
                     }
                     cache.set(`${Object.keys(dataObj)}:${dataObj.cep}`, _endereco, 60 * 15);
-                    console.log(_endereco);
+                    
                     return res.status(200).json({ endereco: _endereco, error: false });
                 }
                 catch (err) {

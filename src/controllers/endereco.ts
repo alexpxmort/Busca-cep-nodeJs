@@ -13,6 +13,7 @@
 
 
  import { Request,Response } from 'express';
+import { object } from "yup/lib/locale";
 
  
  
@@ -31,11 +32,7 @@
        let{data} = req.body
        let dataObj = ( data!=undefined && Object.keys(data).length > 0)?data:req.body
        try{
-         await  schemaEndereco.validate(dataObj,{abortEarly:false});
-         try{
-
-            try{
-
+              await  schemaEndereco.validate(dataObj,{abortEarly:false});
                   const cached = await cache.get(`${Object.keys(dataObj)}:${dataObj.cep}`);
 
                   if(cached){
@@ -51,6 +48,7 @@
                   if(_enderecoDb){
                       _endereco = _enderecoDb;
                   }else{
+                    console.log(_cep.data)
                     let  enderecoCreated = await this.EnderecoService.create(_cep.data);
 
                     _endereco = enderecoCreated;
@@ -58,17 +56,8 @@
 
                   cache.set(`${Object.keys(dataObj)}:${dataObj.cep}`,_endereco,60*15);
 
-                  console.log(_endereco)
-
                   return res.status(200).json({endereco:_endereco,error:false});    
 
-              }catch(err){
-                return res.status(400).json({'msg':`Erro ao criar endereço: ${err.message}`,error:true});
-              }
-
-       }catch(err){
-         return res.status(400).json({'msg':`Erro ao criar endereço: ${err.message}`,error:true});
-       }
        }catch(err){
          let errorMessages = {};
  
@@ -77,7 +66,13 @@
              errorMessages[error.path] = error.message;
            })
          }
-         return res.status(400).json({msg:'Dados inválidos',error:true,erros:errorMessages});
+
+         if(Object.keys(errorMessages).length > 0){
+          return res.status(400).json({msg:'Dados inválidos',error:true,erros:errorMessages});
+         }else{
+          return res.status(400).json({'msg':`Erro ao criar Endereço: ${err.message}`,error:true});
+         }
+
        }
  
      }
