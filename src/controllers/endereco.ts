@@ -6,14 +6,12 @@
 
  import EnderecoService from "../modules/endereco/endereco.service";
  import {schemaEndereco} from '../validations/endereco.validation'
- const EnderecoUtil  = require('../utils/endereco.util')
  import * as Yup from 'yup'
  import ViaCepService from '../services/via_cep/viaCepService'
  const cache = require('../lib/cache')
 
 
  import { Request,Response } from 'express';
-import { object } from "yup/lib/locale";
 
  
  
